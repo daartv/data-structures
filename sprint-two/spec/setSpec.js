@@ -24,4 +24,11 @@ describe('set', function() {
     expect(set.contains('Mel Gibson')).to.equal(false);
   });
 
+  it('should contain a value that was removed but added back', function() {
+    set.add('Dario Arteaga');
+    set.remove('Dario Arteaga');
+    set.add('Dario Arteaga')
+    expect(set.contains('Dario Arteaga')).to.equal(true);
+  });
+
 });

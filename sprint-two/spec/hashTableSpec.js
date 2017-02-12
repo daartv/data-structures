@@ -47,6 +47,13 @@ describe('hashTable', function() {
     window.getIndexBelowMaxForKey = oldHashFunction;
   });
 
+  it('should contain values that were removed and then added back', function() {
+    hashTable.insert('Steven', 'Tyler');
+    hashTable.remove('Steven');
+    hashTable.insert('Steven','Tyler');
+    expect(hashTable.retrieve('Steven')).to.equal('Tyler');
+  });
+
   // (Advanced! Remove the extra "x" when you want the following tests to run)
   xit ('should double in size when needed', function() {
     _.each(people, function(person) {
