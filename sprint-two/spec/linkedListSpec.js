@@ -52,10 +52,10 @@ describe('linkedList', function() {
   });
 
   // add more tests here to test the functionality of linkedList
-  // it('should check for a value in the middle of the linked list', function () {
-  //   linkedList.addToTail(1);
-  //   linkedList.addToTail(2);
-  //   linkedList.addToTail(3);
-  //   expect(linkedList.contains(2)).to.equal(true);
-  // });
+  it('should contain a value even if added and removed several times', function () {
+    linkedList.addToTail(1);
+    linkedList.removeHead();
+    linkedList.addToTail(1);
+    expect(linkedList.contains(1)).to.equal(true);
+  });
 });

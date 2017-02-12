@@ -5,51 +5,42 @@ var LinkedList = function() {
 
   // Time complexity: O(1)
   list.addToTail = function(value) {
-    if (this.tail === null) {
-      this.tail = Node(value);
-      this.head = this.tail;
-    } else {
-      this.tail.next = Node(value);  
-      this.tail = Node(value);
+    var addedTail = Node(value);
+    if (!list.head) {
+      list.head = addedTail;
     }
+    if (list.tail) {
+      list.tail.next = addedTail;
+    }
+    list.tail = addedTail
   };
-
   // Time complexity: O(1)
   list.removeHead = function() {
-    var removedHeadValue = this.head.value;
-    this.head = this.head.next;
-    return removedHeadValue;
+    if (list.head === null) {
+      return null;
+    }
+    var currHead = list.head;
+    list.head = list.head.next;
+    return currHead.value;
   };
-
   // Time complexity: O(1) ... because we only checked for the head and tail
   list.contains = function(target) {
-    if (target === this.head.value || target === this.tail.value) {
-      return true;
-    } else {
-      // var checkMiddle = function (node) {
-      //   if (node.value === target) {
-      //     return true;
-      //   } else if (node.next !== null) {
-      //     checkMiddle(node.next);
-      //   }
-      //   return false;
-      // };
-      // if (this.head.next !== null) {
-      //   checkMiddle(this.head.next);
-      // }
+   var node = list.head;
+    while (node) {
+      if (node.value === target) {
+        return true;
+      }
+      node = node.next;
     }
     return false;
-  };
-
-  return list;
+   };
+   return list;
 };
 
 var Node = function(value) {
   var node = {};
-
   node.value = value;
   node.next = null;
-
   return node;
 };
 
