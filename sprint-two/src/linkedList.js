@@ -26,17 +26,17 @@ var LinkedList = function() {
     if (target === this.head.value || target === this.tail.value) {
       return true;
     } else {
-      var checkMiddle = function (node) {
-        if (node.value === target) {
-          return true;
-        } else if (node.next !== null) {
-          checkMiddle(node.next);
-        }
-        return false;
-      };
-      if (this.head.next !== null) {
-        checkMiddle(this.head.next);
-      }
+      // var checkMiddle = function (node) {
+      //   if (node.value === target) {
+      //     return true;
+      //   } else if (node.next !== null) {
+      //     checkMiddle(node.next);
+      //   }
+      //   return false;
+      // };
+      // if (this.head.next !== null) {
+      //   checkMiddle(this.head.next);
+      // }
     }
     return false;
   };

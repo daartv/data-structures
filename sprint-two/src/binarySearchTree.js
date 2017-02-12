@@ -71,20 +71,3 @@ bstMethods.depthFirstLog = function(callback) {
 
 
 // var binarySearchTree = BinarySearchTree();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
